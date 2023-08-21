@@ -18,6 +18,12 @@ insert into member_img value (6 , '회원사진' , '사진이름' , '사진url' 
 insert into member_img value (7 , '회원사진' , '사진이름' , '사진url' , 7 , 'Y');
 insert into member_img value (8 , '회원사진N' , '사진이름' , '사진urlN' , 1 , 'Y');
 
+insert into member_img value (1 , 1 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
+insert into member_img value (1 , 2 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
+insert into member_img value (1 , 3 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
+insert into member_img value (1 , 4 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
+insert into member_img value (1 , 5 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
+
 insert into recipe value (1 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
 insert into recipe value (2 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
 insert into recipe value (3 , 1 , '설명3' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
@@ -31,10 +37,21 @@ insert into recipe value (9 , 0 , '설명2' , sysdate() , '이미지1' , '인트
 insert into recipe value (10 , 5000 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3);
 
 
-insert into recipe value (4 , 1 , sysdate() , 1 , 3 , '본문test3' , '이미지test3' , 'introtest3' , '서브타이틀test3' , '제목test3');
-insert into recipe value (55 , 1 , sysdate() , 1 , 4 , '본문test4' , '이미지test4' , 'introtest4' , '서브타이틀test4' , '제목test4');
-insert into recipe value (60 , 1 , sysdate() , 1 , 5 , '본문test5' , '이미지test5' , 'introtest5' , '서브타이틀test5' , '제목test5');
-insert into recipe value (1250 , 1 , sysdate() , 1 , 6 , '본문test6' , '이미지test6' , 'introtest6' , '서브타이틀test6' , '제목test6');
+insert into recipe value (4 , '1' , '초급' , 1 , 1 , '본문test1' , '이미지test3' , 'introtest1' , '서브타이틀test1' , '제목test1' ,sysdate() , sysdate());
+insert into recipe value (55 , '1' , '초급' , 1 , 2 , '본문test2' , '이미지test4' , 'introtest2' , '서브타이틀test2' , '제목test2' ,sysdate() , sysdate());
+insert into recipe value (60 , '1' , '초급' , 1 , 3, '본문test3' , '이미지test5' , 'introtest3' , '서브타이틀test3' , '제목test3' ,sysdate() , sysdate());
+insert into recipe value (1050, '1' , '초급' , 1 , 4 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' ,  sysdate() , sysdate());
+insert into recipe value (10, '1' , '초급', 2 , 5 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (130, '1' , '초급', 2 , 6 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (10, '1' , '초급', 2 , 7 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (0, '1' , '초급', 1 , 8 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (5, '1' , '초급', 1 , 9 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (20, '1' , '초급', 3 , 10 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (25, '1' , '초급', 4 , 11 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (10, '1' , '초급', 5 , 12 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (5500, '1' , '초급', 6 , 13 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+insert into recipe value (444, '1' , '초급', 7 , 14 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
+
 
 insert into member value(1 , sysdate() , sysdate() , '1' , '1' , 'admin' , '민규민규' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
 insert into member value(2 , sysdate() , sysdate() , '1' , '1' , 'admin2' , '민규민규2' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
@@ -43,10 +60,16 @@ insert into member value(4 , sysdate() , sysdate() , '1' , '1' , 'admin4' , '민
 insert into member value(5 , sysdate() , sysdate() , '1' , '1' , 'admin5' , '민규민규5' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
 insert into member value(6 , sysdate() , sysdate() , '1' , '1' , 'admin6' , '민규민규6' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
 insert into member value(7 , sysdate() , sysdate() , '1' , '1' , 'admin7' , '민규민규7' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-select * from follower;
-select * from following;
-insert into following value (1 , 1 , '민규민규2');
-insert into following value (2 , 1 , '민규민규3');
+
+insert into member value (01071280150 , 1 , sysdate() , sysdate() , '1' , '이메일' , 'ㅇ' , '닉네임1' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 2 , sysdate() , sysdate() , '1' , '이메일2' , 'ㅇ' , '닉네임2' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 3 , sysdate() , sysdate() , '1' , '이메일3' , 'ㅇ' , '닉네임3' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 4 , sysdate() , sysdate() , '1' , '이메일4' , 'ㅇ' , '닉네임4' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 5 , sysdate() , sysdate() , '1' , '이메일5' , 'ㅇ' , '닉네임5' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 6 , sysdate() , sysdate() , '1' , '이메일6' , 'ㅇ' , '닉네임6' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+insert into member value (01071280150 , 7 , sysdate() , sysdate() , '1' , '이메일7' , 'ㅇ' , '닉네임7' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
+
+
 
 
 select * from member where nickname = '민규민규2';
@@ -81,7 +104,59 @@ insert into follow value (14 , sysdate() , null , 1 , 6);
 insert into follow value (15 , sysdate() , null , 1 , 7);
 
 
+insert into follow value (1 , 1 , sysdate() , 2 , sysdate());
+insert into follow value (2 , 1 , sysdate() , 3 , sysdate());
+insert into follow value (3 , 2 , sysdate() , 1 , sysdate());
+insert into follow value (4 , 3 , sysdate() , 1 , sysdate());
+insert into follow value (5 , 4 , sysdate() , 1 , sysdate());
+insert into follow value (6 , 5 , sysdate() , 1 , sysdate());
+insert into follow value (7 , 6 , sysdate() , 1 , sysdate());
+
 select * from follow;
+
+select * from book_mark;
+select * from recipe;
+insert into book_mark value(1, 1, 10 , sysdate() , sysdate() , 'no' , 'no');
+insert into book_mark value(2, 1, 14 , sysdate() , sysdate() , 'no' , 'no');
+insert into book_mark value(3, 2, 10 , sysdate() , sysdate() , 'no' , 'no');
+insert into book_mark value(4, 2, 1 , sysdate() , sysdate() , 'no' , 'no');
+
+## 1번 회원이 북마크한 레시피 정보
+select r.*
+from recipe r
+where recipe_id in  (select recipe_id 
+                    from book_mark
+                    where member_id = 1);
+
+## 레시피의 모든정보와 레시피에 북마크된 횟수 (북마크많은순)
+SELECT
+ ROW_NUMBER() OVER (ORDER BY  COUNT(bm.recipe_id) desc) AS NUM,
+ COUNT(bm.recipe_id) AS bookmark_count,
+    r.*
+FROM
+    recipe r
+LEFT JOIN
+    book_mark bm ON r.recipe_id = bm.recipe_id
+GROUP BY
+    r.recipe_id
+    order by COUNT(bm.recipe_id) desc;
+
+## 레시피의 모든정보와 레시피에 북마크된 횟수 (최신순)
+SELECT
+ ROW_NUMBER() OVER (ORDER BY  r.reg_time desc) AS NUM,
+ COUNT(bm.recipe_id) AS bookmark_count,
+    r.*
+FROM
+    recipe r
+LEFT JOIN
+    book_mark bm ON r.recipe_id = bm.recipe_id
+GROUP BY
+    r.recipe_id
+    order by r.reg_time desc;
+
+select * from category;
+select * from type;
+
 
 #1번 회원이 팔로잉 하는 회원수
 select  count(to_member) follow  
@@ -107,7 +182,7 @@ where member_id in (select to_member
                     from follow
                     where member_id=1);                    
 
-
+select * from category;
 
 #1번 회원이 팔로잉 하는 회원수
 select  count(to_member) follow  
