@@ -8,67 +8,6 @@ select * from recipe;
 select * from member;
 
 select * from member_img;
-insert into member_img value (1 , '회원사진' , '사진이름' , '사진url' , 1 , 'Y');
-insert into member_img value (5 , '회원사진2' , '사진이름2' , '사진ur2' , 1 , 'N');
-insert into member_img value (2 , '회원사진' , '사진이름' , '사진url' , 2 , 'Y');
-insert into member_img value (3 , '회원사진' , '사진이름' , '사진url' , 3 , 'Y');
-insert into member_img value (4 , '회원사진' , '사진이름' , '사진url' , 4 , 'Y');
-insert into member_img value (5 , '회원사진' , '사진이름' , '사진url' , 5 , 'Y');
-insert into member_img value (6 , '회원사진' , '사진이름' , '사진url' , 6 , 'Y');
-insert into member_img value (7 , '회원사진' , '사진이름' , '사진url' , 7 , 'Y');
-insert into member_img value (8 , '회원사진N' , '사진이름' , '사진urlN' , 1 , 'Y');
-
-insert into member_img value (1 , 1 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
-insert into member_img value (1 , 2 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
-insert into member_img value (1 , 3 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
-insert into member_img value (1 , 4 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
-insert into member_img value (1 , 5 , 'Y' , '이미지NAME' , '이미지NAME' , '이미지URL1');
-
-insert into recipe value (1 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
-insert into recipe value (2 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
-insert into recipe value (3 , 1 , '설명3' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
-insert into recipe value (4 , 0 , '설명4' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
-insert into recipe value (5 , 5000 , '설명5' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1);
-
-insert into recipe value (6 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2);
-insert into recipe value (7 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2);
-insert into recipe value (8 , 1 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3);
-insert into recipe value (9 , 0 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3);
-insert into recipe value (10 , 5000 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3);
-
-
-insert into recipe value (4 , '1' , '초급' , 1 , 1 , '본문test1' , '이미지test3' , 'introtest1' , '서브타이틀test1' , '제목test1' ,sysdate() , sysdate());
-insert into recipe value (55 , '1' , '초급' , 1 , 2 , '본문test2' , '이미지test4' , 'introtest2' , '서브타이틀test2' , '제목test2' ,sysdate() , sysdate());
-insert into recipe value (60 , '1' , '초급' , 1 , 3, '본문test3' , '이미지test5' , 'introtest3' , '서브타이틀test3' , '제목test3' ,sysdate() , sysdate());
-insert into recipe value (1050, '1' , '초급' , 1 , 4 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' ,  sysdate() , sysdate());
-insert into recipe value (10, '1' , '초급', 2 , 5 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (130, '1' , '초급', 2 , 6 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (10, '1' , '초급', 2 , 7 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (0, '1' , '초급', 1 , 8 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (5, '1' , '초급', 1 , 9 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (20, '1' , '초급', 3 , 10 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (25, '1' , '초급', 4 , 11 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (10, '1' , '초급', 5 , 12 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (5500, '1' , '초급', 6 , 13 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-insert into recipe value (444, '1' , '초급', 7 , 14 , '본문test4' , '이미지test6' , 'introtest4' , '서브타이틀test4' , '제목test4' , sysdate() , sysdate());
-
-
-insert into member value(1 , sysdate() , sysdate() , '1' , '1' , 'admin' , '민규민규' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(2 , sysdate() , sysdate() , '1' , '1' , 'admin2' , '민규민규2' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(3 , sysdate() , sysdate() , '1' , '1' , 'admin3' , '민규민규3' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(4 , sysdate() , sysdate() , '1' , '1' , 'admin4' , '민규민규4' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(5 , sysdate() , sysdate() , '1' , '1' , 'admin5' , '민규민규5' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(6 , sysdate() , sysdate() , '1' , '1' , 'admin6' , '민규민규6' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value(7 , sysdate() , sysdate() , '1' , '1' , 'admin7' , '민규민규7' , '비밀번호' , 01071280150 , 'Y' , 'Y' , 'ADMIN' , 'Y');
-
-insert into member value (01071280150 , 1 , sysdate() , sysdate() , '1' , '이메일' , 'ㅇ' , '닉네임1' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 2 , sysdate() , sysdate() , '1' , '이메일2' , 'ㅇ' , '닉네임2' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 3 , sysdate() , sysdate() , '1' , '이메일3' , 'ㅇ' , '닉네임3' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 4 , sysdate() , sysdate() , '1' , '이메일4' , 'ㅇ' , '닉네임4' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 5 , sysdate() , sysdate() , '1' , '이메일5' , 'ㅇ' , '닉네임5' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 6 , sysdate() , sysdate() , '1' , '이메일6' , 'ㅇ' , '닉네임6' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-insert into member value (01071280150 , 7 , sysdate() , sysdate() , '1' , '이메일7' , 'ㅇ' , '닉네임7' , '비밀번호' , 'Y' , 'Y' , 'ADMIN' , 'Y');
-
 
 
 
@@ -85,41 +24,12 @@ select name from following where member_id = 1;
 
 select * from recipe order by recipe_id asc LIMIT 5;
 
-insert into follow value (1 , sysdate() , null , 2 , 1);
-insert into follow value (2 , sysdate() , null , 3 , 1);
-insert into follow value (3 , sysdate() , null , 4 , 1);
-insert into follow value (4 , sysdate() , null , 5 , 1);
-insert into follow value (5 , sysdate() , null , 6 , 1);
-
-insert into follow value (6 , sysdate() , null , 1 , 2);
-insert into follow value (7 , sysdate() , null , 3 , 2);
-insert into follow value (8 , sysdate() , null , 4 , 2);
-insert into follow value (9 , sysdate() , null , 5 , 2);
-insert into follow value (10 , sysdate() , null , 6 , 2);
-
-insert into follow value (11 , sysdate() , null , 1 , 3);
-insert into follow value (12 , sysdate() , null , 1 , 4);
-insert into follow value (13 , sysdate() , null , 1 , 5);
-insert into follow value (14 , sysdate() , null , 1 , 6);
-insert into follow value (15 , sysdate() , null , 1 , 7);
-
-
-insert into follow value (1 , 1 , sysdate() , 2 , sysdate());
-insert into follow value (2 , 1 , sysdate() , 3 , sysdate());
-insert into follow value (3 , 2 , sysdate() , 1 , sysdate());
-insert into follow value (4 , 3 , sysdate() , 1 , sysdate());
-insert into follow value (5 , 4 , sysdate() , 1 , sysdate());
-insert into follow value (6 , 5 , sysdate() , 1 , sysdate());
-insert into follow value (7 , 6 , sysdate() , 1 , sysdate());
 
 select * from follow;
 
 select * from book_mark;
 select * from recipe;
-insert into book_mark value(1, 1, 10 , sysdate() , sysdate() , 'no' , 'no');
-insert into book_mark value(2, 1, 14 , sysdate() , sysdate() , 'no' , 'no');
-insert into book_mark value(3, 2, 10 , sysdate() , sysdate() , 'no' , 'no');
-insert into book_mark value(4, 2, 1 , sysdate() , sysdate() , 'no' , 'no');
+
 
 ## 1번 회원이 북마크한 레시피 정보
 select r.*
@@ -132,14 +42,205 @@ where recipe_id in  (select recipe_id
 SELECT
  ROW_NUMBER() OVER (ORDER BY  COUNT(bm.recipe_id) desc) AS NUM,
  COUNT(bm.recipe_id) AS bookmark_count,
-    r.*
+    r.* , 
+    m.nickname
 FROM
     recipe r
 LEFT JOIN
     book_mark bm ON r.recipe_id = bm.recipe_id
+LEFT JOIN
+	member m ON m.member_id = bm.member_id
 GROUP BY
     r.recipe_id
     order by COUNT(bm.recipe_id) desc;
+
+SELECT
+	ROW_NUMBER() OVER (ORDER BY  COUNT(bm.recipe_id) desc) AS NUM,
+    COUNT(bm.recipe_id) AS bookmark_count,
+    r.recipe_id,r.count,r.description,r.dur_time,r.image_url,r.intro,r.level,r.sub_title,r.title,r.member_id,
+    m.nickname,
+    mi.img_url   AS member_img,
+    mi.img_main_ok  AS main_ok
+FROM
+    recipe r
+LEFT JOIN
+    book_mark bm ON r.recipe_id = bm.recipe_id
+JOIN
+    member m ON r.member_id = m.member_id
+JOIN
+    member_img mi ON m.member_id = mi.member_id
+GROUP BY
+     r.recipe_id,r.count,r.description,r.dur_time,r.image_url,r.intro,r.level,r.sub_title,r.title,r.member_id, m.nickname,
+    mi.img_url , mi.img_main_ok
+
+     order by COUNT(bm.recipe_id) desc;
+	
+    ## r.title like '%%';
+
+SELECT
+    ROW_NUMBER() OVER (ORDER BY COUNT(bm.recipe_id) DESC) AS NUM,
+    COUNT(bm.recipe_id) AS bookmark_count,
+    r.recipe_id, r.count, r.description, r.dur_time, r.image_url, r.intro, r.level, r.sub_title, r.title, r.member_id,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok
+FROM
+    recipe r
+LEFT JOIN
+    book_mark bm ON r.recipe_id = bm.recipe_id
+JOIN
+    member m ON r.member_id = m.member_id
+LEFT JOIN
+    member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+GROUP BY
+    r.recipe_id, r.count, r.description, r.dur_time, r.image_url, r.intro, r.level, r.sub_title, r.title, r.member_id, m.nickname,
+    mi.img_url, mi.img_main_ok
+ORDER BY
+    COUNT(bm.recipe_id) DESC;
+
+select * from category;
+
+insert into category value( 1, '메인' , 1);
+
+SELECT
+    ROW_NUMBER() OVER (ORDER BY COUNT(bm.recipe_id) DESC) AS NUM,
+    COUNT(bm.recipe_id) AS bookmark_count,
+    r.recipe_id, r.count,  r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, r.reg_time,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok,
+    c.category_enum AS category_enum
+FROM
+    recipe r
+LEFT JOIN
+    book_mark bm ON r.recipe_id = bm.recipe_id
+JOIN
+    member m ON r.member_id = m.member_id
+LEFT JOIN
+    member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+JOIN
+    category c ON r.recipe_id = c.recipe_id
+GROUP BY
+    r.recipe_id, r.count, r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, m.nickname,  r.reg_time ,
+    mi.img_url, mi.img_main_ok, c.category_enum
+ORDER BY
+    COUNT(bm.recipe_id) DESC;
+
+select *
+from review;
+# 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
+# 레시피 북마크 많은 순
+SELECT
+    ROW_NUMBER() OVER (ORDER BY bm_count DESC) AS NUM,
+    ifnull(bm_count , 0) AS bookmark_count,
+    ifnull(rv_count , 0) AS review_count,
+    COALESCE(rv_avg, 0) AS reting_avg,
+    r.recipe_id, r.count, r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, r.reg_time, r.intro,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok,
+    c.category_enum AS category_enum
+FROM recipe r
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS bm_count
+    FROM book_mark
+    GROUP BY recipe_id
+) bm ON r.recipe_id = bm.recipe_id
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS rv_count, COALESCE(AVG(reting), 0) AS rv_avg
+    FROM review
+    GROUP BY recipe_id
+) rv ON r.recipe_id = rv.recipe_id
+JOIN member m ON r.member_id = m.member_id
+LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+JOIN category c ON r.recipe_id = c.recipe_id
+ORDER BY bm_count DESC;
+
+# 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
+# 레시피 리뷰 많은 순
+SELECT
+    ROW_NUMBER() OVER (ORDER BY rv_count DESC) AS NUM,
+    ifnull(bm_count , 0) AS bookmark_count,
+    ifnull(rv_count , 0) AS review_count,
+    COALESCE(rv_avg, 0) AS reting_avg,
+    r.recipe_id, r.count, r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, r.reg_time, r.intro,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok,
+    c.category_enum AS category_enum
+FROM recipe r
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS bm_count
+    FROM book_mark
+    GROUP BY recipe_id
+) bm ON r.recipe_id = bm.recipe_id
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS rv_count, COALESCE(AVG(reting), 0) AS rv_avg
+    FROM review
+    GROUP BY recipe_id
+) rv ON r.recipe_id = rv.recipe_id
+JOIN member m ON r.member_id = m.member_id
+LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+JOIN category c ON r.recipe_id = c.recipe_id
+ORDER BY rv_count DESC;
+
+# 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
+# 레시피 최신 순
+SELECT
+    ROW_NUMBER() OVER (ORDER BY r.reg_time DESC) AS NUM,
+    ifnull(bm_count , 0) AS bookmark_count,
+    ifnull(rv_count , 0) AS review_count,
+    COALESCE(rv_avg, 0) AS reting_avg,
+    r.recipe_id, r.count, r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, r.reg_time, r.intro,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok,
+    c.category_enum AS category_enum
+FROM recipe r
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS bm_count
+    FROM book_mark
+    GROUP BY recipe_id
+) bm ON r.recipe_id = bm.recipe_id
+LEFT JOIN (
+    SELECT recipe_id, COUNT(*) AS rv_count, COALESCE(AVG(reting), 0) AS rv_avg
+    FROM review
+    GROUP BY recipe_id
+) rv ON r.recipe_id = rv.recipe_id
+JOIN member m ON r.member_id = m.member_id
+LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+JOIN category c ON r.recipe_id = c.recipe_id
+ORDER BY r.reg_time DESC;
 
 ## 레시피의 모든정보와 레시피에 북마크된 횟수 (최신순)
 SELECT
