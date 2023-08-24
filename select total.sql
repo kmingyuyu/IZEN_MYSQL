@@ -1,3 +1,5 @@
+use yummy;
+
 ## 1번 회원이 북마크한 레시피 정보
 select r.*
 from recipe r
@@ -99,7 +101,7 @@ LEFT JOIN (
     GROUP BY member_id
 ) followings ON m.member_id = followings.member_id
 LEFT JOIN (
-    SELECT member_id, COUNT(recipe_id) AS recipes_count
+    SELECT member_id, COUNT(recipe_id)  AS recipes_count
     FROM recipe
     GROUP BY member_id
 ) recipes ON m.member_id = recipes.member_id
@@ -138,6 +140,99 @@ LEFT JOIN member_img img ON m.member_id = img.member_id
        OR img.member_id IS NULL
 ORDER BY followers_count DESC;
 
+SELECT
+    COALESCE(followers.followers_count,0) AS followers_count,
+    COALESCE(followings.followings_count,0) AS followings_count,
+    COALESCE(recipes.recipes_count,0) AS recipe_count,
+    COALESCE(rv_avg, 0) AS rating_avg,
+    m.nickName,
+    m.member_id,
+     IFNULL(img.img_url, 'none') AS img_url,
+    IFNULL(img.img_name, 'none') AS img_name,
+    IFNULL(img.img_main_ok, 'none') AS img_main_ok
+FROM member m
+LEFT JOIN (
+    SELECT to_member, COUNT(member_id) AS followers_count
+    FROM follow
+    GROUP BY to_member
+) followers ON m.member_id = followers.to_member
+LEFT JOIN (
+    SELECT member_id, COUNT(to_member) AS followings_count
+    FROM follow
+    GROUP BY member_id
+) followings ON m.member_id = followings.member_id
+LEFT JOIN (
+    SELECT member_id, COUNT(recipe_id) AS recipes_count
+    FROM recipe
+    GROUP BY member_id
+) recipes ON m.member_id = recipes.member_id
+LEFT JOIN (
+    SELECT r.member_id, AVG(rv.reting) AS rv_avg
+    FROM recipe r
+    LEFT JOIN review rv ON r.recipe_id = rv.recipe_id
+    GROUP BY r.member_id
+) rv_avg ON m.member_id = rv_avg.member_id
+LEFT JOIN member_img img ON m.member_id = img.member_id
+		WHERE img.img_main_ok = 'Y' 
+       OR img.member_id IS NULL
+ORDER BY followers.followers_count DESC;
+
+SELECT
+    COALESCE(followers.followers_count, 0) AS followers_count,
+    COALESCE(followings.followings_count, 0) AS followings_count,
+    COALESCE(recipes.recipes_count, 0) AS recipe_count,
+    COALESCE(rv_avg, 0) AS rating_avg,
+    COALESCE(total_recipe_count, 0) AS total_count_count,
+    COALESCE(total_comment_count, 0) AS total_comment_count,
+    COALESCE(total_review_count, 0) AS total_review_count, 
+    m.nickName,
+    m.member_id,
+    IFNULL(img.img_url, 'none') AS img_url
+FROM member m
+LEFT JOIN (
+    SELECT to_member, COUNT(member_id) AS followers_count
+    FROM follow
+    GROUP BY to_member
+) followers ON m.member_id = followers.to_member
+LEFT JOIN (
+    SELECT member_id, COUNT(to_member) AS followings_count
+    FROM follow
+    GROUP BY member_id
+) followings ON m.member_id = followings.member_id
+LEFT JOIN (
+    SELECT member_id, COUNT(recipe_id) AS recipes_count
+    FROM recipe
+    GROUP BY member_id
+) recipes ON m.member_id = recipes.member_id
+LEFT JOIN (
+    SELECT r.member_id, AVG(rv.reting) AS rv_avg
+    FROM recipe r
+    LEFT JOIN review rv ON r.recipe_id = rv.recipe_id
+    GROUP BY r.member_id
+) rv_avg ON m.member_id = rv_avg.member_id
+LEFT JOIN (
+    SELECT member_id, SUM(count) AS total_recipe_count
+    FROM recipe
+    GROUP BY member_id
+) total_recipe_count ON m.member_id = total_recipe_count.member_id
+LEFT JOIN (
+    SELECT r.member_id, COUNT(c.comment_id) AS total_comment_count
+    FROM recipe r
+    LEFT JOIN comment c ON r.recipe_id = c.recipe_id
+    GROUP BY r.member_id
+) total_comment_count ON m.member_id = total_comment_count.member_id
+LEFT JOIN (
+    SELECT r.member_id, COUNT(rv.review_id) AS total_review_count
+    FROM recipe r
+    LEFT JOIN review rv ON r.recipe_id = rv.recipe_id
+    GROUP BY r.member_id
+) total_review_count ON m.member_id = total_review_count.member_id 
+LEFT JOIN member_img img ON m.member_id = img.member_id
+WHERE img.img_main_ok = 'Y' 
+    OR img.member_id IS NULL
+ORDER BY followers.followers_count DESC;
+
+
 select *
 from review;
 # 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
@@ -173,6 +268,14 @@ JOIN member m ON r.member_id = m.member_id
 LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
 JOIN category c ON r.recipe_id = c.recipe_id
 ORDER BY bm_count DESC;
+
+
+
+
+
+
+
+
 
 # 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
 # 레시피 리뷰 많은 순
@@ -241,3 +344,69 @@ JOIN member m ON r.member_id = m.member_id
 LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
 JOIN category c ON r.recipe_id = c.recipe_id
 ORDER BY r.reg_time DESC;
+
+# 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
+# 레시피 북마크 많은 순
+SELECT
+   # ROW_NUMBER() OVER (ORDER BY bm_count DESC) AS NUM,
+    r.recipe_id, r.count, r.dur_time, r.image_url, r.level, r.sub_title, r.title, r.member_id, r.reg_time, r.intro,
+    m.nickname,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_url
+    END AS member_img,
+    CASE
+        WHEN mi.member_id IS NULL THEN 'none'
+        ELSE mi.img_main_ok
+    END AS main_ok,
+    c.category_enum AS category_enum
+FROM recipe r
+JOIN member m ON r.member_id = m.member_id
+LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
+JOIN category c ON r.recipe_id = c.recipe_id;
+#ORDER BY bm_count DESC;
+
+select* from review;
+select * from book_mark;
+#   ifnull(bm_count , 0) AS bookmark_count,
+
+#LEFT JOIN (
+   # SELECT recipe_id, COUNT(*) AS bm_count
+  #  FROM book_mark
+ #   GROUP BY recipe_id
+#) bm ON r.recipe_id = bm.recipe_id
+
+select * from review;
+
+#각 레시피별 북마크수
+SELECT
+    r.recipe_id,
+    COUNT(b.recipe_id) AS bookmark_count
+FROM
+    recipe r
+LEFT JOIN
+    book_mark b ON r.recipe_id = b.recipe_id
+GROUP BY
+    r.recipe_id;
+
+#LEFT JOIN (
+#    SELECT recipe_id, COUNT(*) AS rv_count, COALESCE(AVG(reting), 0) AS rv_avg
+#    FROM review
+#    GROUP BY recipe_id
+#) rv ON r.recipe_id = rv.recipe_id
+
+select * from book_mark;
+
+ #레피시에 남겨진 리뷰수와 리뷰 평점
+ SELECT
+    r.recipe_id,
+    COUNT(rv.review_id) AS review_count,
+    ifnull(AVG(rv.reting),0.0) AS average_rating
+FROM
+    recipe r
+LEFT JOIN
+    review rv ON r.recipe_id = rv.recipe_id
+GROUP BY
+    r.recipe_id;
+ 
+
