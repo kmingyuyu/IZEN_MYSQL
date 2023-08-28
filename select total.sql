@@ -1,5 +1,5 @@
 use yummy;
-
+commit;
 ## 1번 회원이 북마크한 레시피 정보
 select r.*
 from recipe r
@@ -42,6 +42,9 @@ where member_id=1;
 select  count(member_id) follow  
 from follow  
 where to_member=1;
+
+
+
 
 
 ## 1번 회원의 모든 정보와 팔로워수 / 팔로잉수
@@ -232,6 +235,13 @@ WHERE img.img_main_ok = 'Y'
     OR img.member_id IS NULL
 ORDER BY followers.followers_count DESC;
 
+select * from recipe;
+
+UPDATE recipe
+
+SET member_id=1
+
+WHERE recipe_id=21 ;
 
 select *
 from review;
@@ -409,4 +419,12 @@ LEFT JOIN
 GROUP BY
     r.recipe_id;
  
-
+select * from item;
+select * from item_img;
+select * from item_review;
+select i.item_id , i.item_nm , i.item_sUb_nm , i.price , i.item_sell_status , i.item_category_enum , i.sale  ,
+	   im.img_url  ,count(ir.item_id) as count , avg(ir.reting) as avg
+from item i
+join item_img im on i.item_id=im.item_id AND im.img_main_ok = 'Y'
+LEFT JOIN item_review ir on i.item_id=ir.item_id
+group by i.item_id , i.item_nm , i.item_sUb_nm , i.price , i.item_sell_status , i.item_category_enum , i.sale ,im.img_url;
