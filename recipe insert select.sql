@@ -108,6 +108,14 @@ insert into item value(5, sysdate() , sysdate() , null , null , '상품이름5' 
 
 select * from item_review;
 
+select * from item_detail_img;
+
+insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(1,'네임' , '오리네임' , '/img/쭈꾸미상세1.jpg',1);
+insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(2,'네임' , '오리네임' , '/img/쭈꾸미상세2.jpg',1);
+insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(3,'네임' , '오리네임' , '/img/쭈꾸미상세3.gif',1);
+insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(4,'네임' , '오리네임' , '/img/쭈꾸미상세4.gif',1);
+insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(5,'네임' , '오리네임' , '/img/쭈꾸미상세5.jpg',1);
+
 insert into item_review value(1, sysdate(), sysdate() , null , null , '너무좋아요!' , 4.0 , 1 , 1);
 insert into item_review value(2, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 2 , 2);
 insert into item_review value(3, sysdate(), sysdate() , null , null , '너무좋아요!' , 5.0 , 3 , 3);
