@@ -94,17 +94,20 @@ insert into review(review_id , member_id , recipe_id , reting , content) value (
 insert into review(review_id , member_id , recipe_id , reting , content) value (10 , 1 , 6 , 1 , '너무맛있어요');
 insert into review(review_id , member_id , recipe_id , reting , content) value (11 , 1 , 7 , 5 , '너무맛있어요');
 
-insert into item_img value(1, '이미지네임' , '이미지오리네임' , '유알엘' , null , 1 , 'Y');
-insert into item_img value(2, '이미지네임2' , '이미지오리네임2' , '유알엘2' , null , 2 , 'Y');
-insert into item_img value(3, '이미지네임3' , '이미지오리네임3' , '유알엘3' , null , 3 , 'Y');
-insert into item_img value(4, '이미지네임4' , '이미지오리네임4' , '유알엘4' , null , 4 , 'Y');
-insert into item_img value(5, '이미지네임5' , '이미지오리네임5' , '유알엘5' , null , 5 , 'Y');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok) value(1, '이미지네임' , '이미지오리네임' , '/img/쭈꾸미1.jpg'  , 1 , 'Y');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok) value(6, '이미지네임' , '이미지오리네임' , '/img/쭈꾸미2.jpg'  , 1 , 'N');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok) value(7, '이미지네임' , '이미지오리네임' , '/img/쭈꾸미3.jpg'  , 1 , 'N');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok) value(8, '이미지네임' , '이미지오리네임' , '/img/쭈꾸미4.jpg'  , 1 , 'N');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(2, '이미지네임2' , '이미지오리네임2' , '유알엘2'  , 2 , 'Y');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(3, '이미지네임3' , '이미지오리네임3' , '유알엘3'  , 3 , 'Y');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(4, '이미지네임4' , '이미지오리네임4' , '유알엘4' , 4 , 'Y');
+insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(5, '이미지네임5' , '이미지오리네임5' , '유알엘5'  , 5 , 'Y');
 
-insert into item value(1, sysdate() , sysdate() , null , null , '상품이름' , 'SELL' , '상품서브이름' , 50000 , 500 , '키친' , 0);
-insert into item value(2, sysdate() , sysdate() , null , null , '상품이름2' , 'SELL' , '상품서브이름2' , 50000 , 500 , '가전' , 10);
-insert into item value(3, sysdate() , sysdate() , null , null , '상품이름3' , 'SELL' , '상품서브이름3' , 50000 , 500 , '푸드' , 20);
-insert into item value(4, sysdate() , sysdate() , null , null , '상품이름4' , 'SELL' , '상품서브이름4' , 50000 , 500 ,'리빙' , 70);
-insert into item value(5, sysdate() , sysdate() , null , null , '상품이름5' , 'SELL' , '상품서브이름5' , 50000 , 500 , '가전' , 10);
+insert into item value(1, sysdate() , sysdate() , null , null , '키친' , '이름' , 'SELL' , '서브이름' , 50000 , 50 , 500);
+insert into item value(2, sysdate() , sysdate() , null , null , '가전'  , '이름2' , 'SELL' , '서브이름2', 34500 , 30 , 500);
+insert into item value(3, sysdate() , sysdate() , null , null , '푸드' , '이름3' , 'SELL' , '서브이름3', 270000 , 0 , 500);
+insert into item value(4, sysdate() , sysdate() , null , null , '리빙'  , '이름4' , 'SELL' , '서브이름4' , 6000 ,10 , 500);
+insert into item value(5, sysdate() , sysdate() , null , null , '가전'  , '이름5' , 'SELL' , '서브이름5' , 50000 , 20 , 500);
 
 select * from item_review;
 
