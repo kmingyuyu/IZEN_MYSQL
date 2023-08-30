@@ -18,15 +18,15 @@ select * from item_img;
 
 select * from item_review;
 
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' , '사진이름' , '사진url' , 1 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (5 , '회원사진2' , '사진이름2' , '사진ur2' , 8 , 'N');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (2 , '회원사진' , '사진이름' , '사진url' , 2 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (3 , '회원사진' , '사진이름' , '사진url' , 3 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (4 , '회원사진' , '사진이름' , '사진url' , 4 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (5 , '회원사진' , '사진이름' , '사진url' , 5 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (6 , '회원사진' , '사진이름' , '사진url' , 6 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (7 , '회원사진' , '사진이름' , '사진url' , 7 , 'Y');
-insert into member_img(member_id , img_name , img_ori_name , img_url , member_img_id , img_main_ok) value (8 , '회원사진N' , '사진이름' , '사진urlN' , 1 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' ,  '사진url' , 1 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (5 , '회원사진2' ,  '사진ur2' , 8 , 'N');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (2 , '회원사진' , '사진url' , 2 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (3 , '회원사진' ,  '사진url' , 3 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (4 , '회원사진' , '사진url' , 4 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (5 , '회원사진' ,  '사진url' , 5 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (6 , '회원사진' ,  '사진url' , 6 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (7 , '회원사진' ,  '사진url' , 7 , 'Y');
+insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (8 , '회원사진N' ,  '사진urlN' , 1 , 'Y');
 
 insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (1 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
 insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (2 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),15);
@@ -127,3 +127,17 @@ insert into item_review value(5, sysdate(), sysdate() , null , null , '너무좋
 insert into item_review value(6, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 1 , 6);
 
 
+SELECT
+    m.nickname AS member_nickname,
+    mi.img_url AS member_img_url,
+    r.item_review_id AS review_id,
+    r.content,
+    r.reting
+FROM
+    item_review r
+JOIN
+    member m ON r.member_id = m.member_id
+LEFT JOIN
+    member_img mi ON m.member_id = mi.member_id and mi.img_main_ok = 'Y' 
+    WHERE
+    r.item_id = 1;
