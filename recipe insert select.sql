@@ -17,6 +17,13 @@ select * from item;
 select * from item_img;
 
 select * from item_review;
+select * from item_review_answer;
+select *
+from item_review
+where item_review_id = 6;
+
+
+
 
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' ,  '사진url' , 1 , 'Y');
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (5 , '회원사진2' ,  '사진ur2' , 8 , 'N');
@@ -28,21 +35,21 @@ insert into member_img(member_id , img_name , img_url , member_img_id , img_main
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (7 , '회원사진' ,  '사진url' , 7 , 'Y');
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (8 , '회원사진N' ,  '사진urlN' , 1 , 'Y');
 
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (1 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (2 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),15);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (3 , 1 , '설명3' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (4 , 0 , '설명4' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (5 , 5000 , '설명5' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),20);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (6 , 1050 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (7 , 10 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (8 , 1 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (9 , 0 , '설명2' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),30);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (10 , 5000 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (11 , 400 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (12 , 20 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 5,sysdate(),10);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (13 , 150 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 4,sysdate(),50);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (14 , 250 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),0);
-insert into recipe(recipe_id,count,description,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (15 , 4550 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (1 , 1050  , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (2 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),15);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (3 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (4 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (5 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),20);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (6 , 1050 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (7 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (8 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (9 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),30);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (10 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (11 , 400 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (12 , 20 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 5,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (13 , 150, sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 4,sysdate(),50);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (14 , 250 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),0);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (15 , 4550 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
 
 
 insert into follow(follow_id,reg_time,update_time,member_id,to_member) value (1 , sysdate() , null , 2 , 1);
@@ -103,11 +110,11 @@ insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_
 insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(4, '이미지네임4' , '이미지오리네임4' , '유알엘4' , 4 , 'Y');
 insert into item_img(item_img_id,img_name,img_ori_name,img_url,item_id,img_main_ok)  value(5, '이미지네임5' , '이미지오리네임5' , '유알엘5'  , 5 , 'Y');
 
-insert into item value(1, sysdate() , sysdate() , null , null , '키친' , '이름' , 'SELL' , '서브이름' , 50000 , 50 , 500);
-insert into item value(2, sysdate() , sysdate() , null , null , '가전'  , '이름2' , 'SELL' , '서브이름2', 34500 , 30 , 500);
-insert into item value(3, sysdate() , sysdate() , null , null , '푸드' , '이름3' , 'SELL' , '서브이름3', 270000 , 0 , 500);
-insert into item value(4, sysdate() , sysdate() , null , null , '리빙'  , '이름4' , 'SELL' , '서브이름4' , 6000 ,10 , 500);
-insert into item value(5, sysdate() , sysdate() , null , null , '가전'  , '이름5' , 'SELL' , '서브이름5' , 50000 , 20 , 500);
+insert into item(item_id,reg_time,update_time,created_by,modified_by,item_category_enum,item_nm,item_sell_status,item_sub_nm,price,sale,stock_number) value(1, sysdate() , sysdate() , null , null , '키친' , '이름' , 'SELL' , '서브이름' , 50000 , 50 , 500);
+insert into item(item_id,reg_time,update_time,created_by,modified_by,item_category_enum,item_nm,item_sell_status,item_sub_nm,price,sale,stock_number) value(2, sysdate() , sysdate() , null , null , '가전'  , '이름2' , 'SELL' , '서브이름2', 34500 , 30 , 500);
+insert into item(item_id,reg_time,update_time,created_by,modified_by,item_category_enum,item_nm,item_sell_status,item_sub_nm,price,sale,stock_number) value(3, sysdate() , sysdate() , null , null , '푸드' , '이름3' , 'SELL' , '서브이름3', 270000 , 0 , 500);
+insert into item(item_id,reg_time,update_time,created_by,modified_by,item_category_enum,item_nm,item_sell_status,item_sub_nm,price,sale,stock_number) value(4, sysdate() , sysdate() , null , null , '리빙'  , '이름4' , 'SELL' , '서브이름4' , 6000 ,10 , 500);
+insert into item(item_id,reg_time,update_time,created_by,modified_by,item_category_enum,item_nm,item_sell_status,item_sub_nm,price,sale,stock_number) value(5, sysdate() , sysdate() , null , null , '가전'  , '이름5' , 'SELL' , '서브이름5' , 50000 , 20 , 500);
 
 select * from item_review;
 
@@ -119,25 +126,24 @@ insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item
 insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(4,'네임' , '오리네임' , '/img/쭈꾸미상세4.gif',1);
 insert into item_detail_img(item_detal_img_id,img_name,img_ori_name,img_url,item_id) value(5,'네임' , '오리네임' , '/img/쭈꾸미상세5.jpg',1);
 
-insert into item_review value(1, sysdate(), sysdate() , null , null , '너무좋아요!' , 4.0 , 1 , 1);
-insert into item_review value(2, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 2 , 2);
-insert into item_review value(3, sysdate(), sysdate() , null , null , '너무좋아요!' , 5.0 , 3 , 3);
-insert into item_review value(4, sysdate(), sysdate() , null , null , '너무좋아요!' , 3.0 , 4 , 4);
-insert into item_review value(5, sysdate(), sysdate() , null , null , '너무좋아요!' , 4.0 , 5 , 5);
-insert into item_review value(6, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 1 , 6);
+insert into item_review(item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id) value(1, sysdate(), sysdate() , null , null , '너무좋아요!' , 4.0 , 1 , 1);
+insert into item_review(item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id)  value(2, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 2 , 2);
+insert into item_review(item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id)  value(3, sysdate(), sysdate() , null , null , '너무좋아요!' , 5.0 , 3 , 3);
+insert into item_review (item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id) value(4, sysdate(), sysdate() , null , null , '너무좋아요!' , 3.0 , 4 , 4);
+insert into item_review(item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id)  value(5, sysdate(), sysdate() , null , null , '너무좋아요!' , 4.0 , 5 , 5);
+insert into item_review (item_review_id,reg_time,update_time,created_by,modified_by,content,reting,item_id,member_id) value(6, sysdate(), sysdate() , null , null , '개구려요!' , 1.0 , 1 , 6);
 
 
 SELECT
-    m.nickname AS member_nickname,
-    mi.img_url AS member_img_url,
     r.item_review_id AS review_id,
     r.content,
-    r.reting
+    r.reting,
+    a.item_review_answer_id,
+    a.content AS answer_content,
+    a.reg_time as answer_reg
 FROM
     item_review r
-JOIN
-    member m ON r.member_id = m.member_id
 LEFT JOIN
-    member_img mi ON m.member_id = mi.member_id and mi.img_main_ok = 'Y' 
+    item_review_answer a ON r.item_review_id = a.item_review_id
     WHERE
     r.item_id = 1;
