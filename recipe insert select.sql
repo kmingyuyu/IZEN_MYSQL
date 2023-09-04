@@ -15,14 +15,17 @@ select * from ingredient;
 select * from recipe_order;
 select * from item;
 select * from item_img;
-
 select * from item_review;
 select * from item_review_answer;
+select * from item_inq;
+select * from item_inq_answer;
 select *
 from item_review
 where item_review_id = 6;
 
-
+UPDATE item_inq
+SET member_id = 1
+WHERE item_id = 1;
 
 
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' ,  '사진url' , 1 , 'Y');

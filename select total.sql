@@ -17,6 +17,20 @@ select  count(member_id) follow
 from follow  
 where to_member=1;
 
+SELECT 
+    i.item_id,
+    ir.item_review_id,
+    iri.item_review_img_id,
+    iri.img_url
+FROM 
+    item i
+LEFT JOIN 
+    item_review ir ON i.item_id = ir.item_id
+LEFT JOIN 
+    item_review_img iri ON ir.item_review_id = iri.item_review_id
+WHERE 
+    i.item_id = 1;
+
 ## 1번회원을 팔로우하는 회원들 정보
 select *  
 from member
