@@ -2,13 +2,12 @@
 use yummy;
 
 commit;
-
+SET FOREIGN_KEY_CHECKS=1;
 select * from recipe;
 select * from member;
 select * from member_img;
 select * from follow;
 select * from book_mark;
-select * from category;
 select * from review;
 select * from recipe;
 select * from ingredient;
@@ -19,13 +18,18 @@ select * from item_review;
 select * from item_review_answer;
 select * from item_inq;
 select * from item_inq_answer;
+select * from item_review_img;
 select *
 from item_review
 where item_review_id = 6;
+select * from item_detail_img;
 
 UPDATE item_inq
 SET member_id = 1
 WHERE item_id = 1;
+
+insert into item_review_img (item_review_id,item_review_img_id,img_name,img_ori_name,img_url) value (1,1,'s','s','/img/쭈꾸미1.jpg');
+insert into item_review_img (item_review_id,item_review_img_id,img_name,img_ori_name,img_url) value (1,2,'s','s','/img/쭈꾸미2.jpg');
 
 
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' ,  '사진url' , 1 , 'Y');
@@ -38,21 +42,21 @@ insert into member_img(member_id , img_name , img_url , member_img_id , img_main
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (7 , '회원사진' ,  '사진url' , 7 , 'Y');
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (8 , '회원사진N' ,  '사진urlN' , 1 , 'Y');
 
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (1 , 1050  , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (2 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),15);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (3 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (4 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (5 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),20);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (6 , 1050 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (7 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (8 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (9 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),30);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (10 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (11 , 400 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (12 , 20 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 5,sysdate(),10);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (13 , 150, sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 4,sysdate(),50);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (14 , 250 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),0);
-insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time) value (15 , 4550 , '설명1' , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10);
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (1 , 1050  , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (2 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),15,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (3 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (4 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (5 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),20 ,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (6 , 1050 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (7 , 10 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (8 , 1 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (9 , 0 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),30,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (10 , 5000 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (11 , 400 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 3,sysdate(),20,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (12 , 20 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 5,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (13 , 150, sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 4,sysdate(),50,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (14 , 250 , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 2,sysdate(),0,'메인요리','PUBLISHED','이미지이름');
+insert into recipe(recipe_id,count,reg_time,image_url,intro,level,sub_title,title,member_id,update_time,dur_time,category_enum,writing_status,img_name) value (15 , 4550  , sysdate() , '이미지1' , '인트로1' , 1 , '서브타이틀1' , '타이틀1' , 1,sysdate(),10,'메인요리','PUBLISHED','이미지이름');
 
 
 insert into follow(follow_id,reg_time,update_time,member_id,to_member) value (1 , sysdate() , null , 2 , 1);
