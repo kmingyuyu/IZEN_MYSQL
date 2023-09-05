@@ -1,5 +1,31 @@
 use yummy;
 commit;
+
+SELECT 
+  r.recipe_id, 
+  r.title, 
+  r.sub_title, 
+  r.intro, 
+  r.dur_time, 
+  r.level, 
+  r.count, 
+  m.nickname, 
+  COALESCE(img.img_url, '/img/free-icon-member-5867267.png') as img_url
+FROM recipe r
+JOIN member m ON r.member_id = m.member_id
+LEFT JOIN (
+  SELECT img_url, member_id
+  FROM member_img
+  WHERE img_main_ok = 'Y'
+) img ON m.member_id = img.member_id
+ORDER BY r.reg_time DESC;
+
+
+
+
+
+
+
 ## 1번 회원이 북마크한 레시피 정보
 select r.*
 from recipe r
@@ -304,7 +330,6 @@ ORDER BY bm_count DESC;
 # 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
 # 레시피 리뷰 많은 순
 SELECT
-    ROW_NUMBER() OVER (ORDER BY rv_count DESC) AS NUM,
     ifnull(bm_count , 0) AS bookmark_count,
     ifnull(rv_count , 0) AS review_count,
     COALESCE(rv_avg, 0) AS reting_avg,
@@ -317,8 +342,8 @@ SELECT
     CASE
         WHEN mi.member_id IS NULL THEN 'none'
         ELSE mi.img_main_ok
-    END AS main_ok,
-    c.category_enum AS category_enum
+    END AS main_ok
+    
 FROM recipe r
 LEFT JOIN (
     SELECT recipe_id, COUNT(*) AS bm_count
@@ -332,7 +357,6 @@ LEFT JOIN (
 ) rv ON r.recipe_id = rv.recipe_id
 JOIN member m ON r.member_id = m.member_id
 LEFT JOIN member_img mi ON m.member_id = mi.member_id AND mi.img_main_ok = 'Y'
-JOIN category c ON r.recipe_id = c.recipe_id
 ORDER BY rv_count DESC;
 
 # 순차번호/북마크수/리뷰수/리뷰평점/레시피아이디/조회수/소요시간/메인사진/난이도/부제목/제목/멤버아이디/레시피생성시간/멤버닉네임/멤버메인사진/메인사진여부 y or none/카테고리명
