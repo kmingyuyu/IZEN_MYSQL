@@ -26,10 +26,12 @@ select * from item_detail_img;
 
 UPDATE item_inq
 SET member_id = 1
-WHERE item_id = 1;
+WHERE item_id = 2;
 
 insert into item_review_img (item_review_id,item_review_img_id,img_name,img_ori_name,img_url) value (1,1,'s','s','/img/쭈꾸미1.jpg');
 insert into item_review_img (item_review_id,item_review_img_id,img_name,img_ori_name,img_url) value (1,2,'s','s','/img/쭈꾸미2.jpg');
+
+
 
 
 insert into member_img(member_id , img_name , img_url , member_img_id , img_main_ok) value (1 , '회원사진' ,  '사진url' , 1 , 'Y');
